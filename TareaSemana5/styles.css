@@ -1,0 +1,70 @@
+/* Estilos generales para la página */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+}
+
+/* Encabezado */
+header {
+  background-color: #3498db;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* Menú de ejercicios */
+.bullet-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.bullet-list li {
+  margin-bottom: 10px;
+}
+
+.bullet-list a {
+  text-decoration: none;
+  color: #3498db;
+  display: inline-block;
+}
+
+/* Formularios en las secciones de ejercicios */
+.exercise-section input[type="number"],
+.exercise-section input[type="text"],
+.exercise-section input[type="password"] {
+  width: 25%;
+  padding: 5px;
+  margin: 5px auto;
+  font-size: 14px;
+}
+
+/* Botones en las secciones de ejercicios */
+.exercise-section button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  display: block;
+  margin: 10px auto;
+}
+
+
+/* Resultados en las secciones de ejercicios */
+.exercise-section p[id$="Output"],
+.exercise-section p[id$="Result"] {
+  margin-top: 10px;
+}
+
+/* Pie de página */
+.footer {
+  text-align: center;
+  margin-top: 50px;
+  padding: 10px;
+  background-color: #3498db;
+  color: #fff;
+}

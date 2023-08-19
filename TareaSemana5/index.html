@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<script>
+  function showSection(sectionId) {
+      var section = document.getElementById(sectionId);
+      if (section) {
+          section.style.display = 'block'; // Mostrar la sección
+      }
+  }
+</script>
+<title>Menú con Saltos</title>
+</head>
+<body>
+  <header>
+    <h1>Seleccione una opción</h1>
+  </header>
+
+  <ul id="exerciseMenu" class="bullet-list">
+    <li>
+      <a href="#" onclick="showSection('imc-section'); return false;"
+        >IMC (Índice de Masa Corporal)</a>
+    </li>
+    <li>
+      <a href="#" onclick="showSection('likes-section'); return false;"
+        >Número de Likes</a>
+    </li>
+    <li>
+      <a href="#" onclick="showSection('login-section'); return false;"
+        >Contraseña Válida</a>
+    </li>
+    <li>
+      <a href="#" onclick="showSection('impuestos-section'); return false;"
+        >Calculo de Impuestos</a>
+    </li>
+    <li>
+      <a href="#" onclick="showSection('array-section'); return false;"
+        >Imprimir un arreglo</a
+      >
+    </li>
+    <li>
+      <a href="#" onclick="showSection('caracteres-section'); return false;"
+        >Numero de caracteres</a>
+    </li>
+    <li>
+      <a href="#" onclick="showSection('sumarArray-section'); return false;"
+        >Sumar Arreglo</a
+      >
+    </li>
+    <li>
+      <a href="#" onclick="showSection('MultiArray-section'); return false;"
+        >Multiplicar Arreglo</a>
+    </li>
+    <li>
+      <a href="#" onclick="showSection('CalRango-section'); return false;"
+        >Rango de Array</a>
+    </li>
+    <li>
+      <a href="#" onclick="showSection('Max-section'); return false;"
+        >Número Máximo</a>
+    </li>
+
+    <div id="secciones">
+      <div id="imc-section" class="exercise-section">
+        <h2>Calculadora de IMC</h2>
+        <p>Utiliza esta calculadora para determinar tu Índice de Masa Corporal (IMC).</p>
+            
+        <label for="peso">Peso (kg):</label>
+        <input type="number" id="peso" step="0.01" placeholder="Ingrese su peso" required><br>
+            
+        <label for="altura">Altura (m):</label>
+        <input type="number" id="altura" step="0.01" placeholder="Ingrese su altura" required><br>
+            
+        <button id="calcularBtn">Calcular IMC</button>
+            
+        <p id="resultado"></p>
+      </div>
+      
+      <div id="likes-section" class="exercise-section">
+        <h2>Calculadora de Likes</h2>
+        <p>Números de Likes :D</p>
+            
+        <label for="likesInput">Número de Likes:</label>
+        <input type="number" id="likesInput" placeholder="Ingrese el número de likes">
+        <button id="likesBtn">Mostrar Likes</button>
+        <p>Likes: <span id="likesOutput">0</span></p>
+      </div>
+  
+      <div id="login-section" class="exercise-section">
+        <h2>Login</h2>
+        <form id="login-form">
+          <label for="username">Usuario:</label>
+          <input type="text" id="username" placeholder="Ingrese usuario" required><br>
+                  
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" placeholder="Ingrese contraseña" required><br>
+               
+        <button type="button" id="login-button">Iniciar Sesión</button>
+          </form>
+        <p id="login-message"></p>
+      </div>
+  
+      <div id="impuestos-section" class="exercise-section">
+        <h2>Calcular Impuestos</h2>
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" placeholder="Ingrese edad">
+        <br>
+        <label for="ingresos">Ingresos:</label>
+        <input type="number" id="ingresos" placeholder="Ingrese contraseña">
+        <br>
+        <button onclick="calcularImpuestos()">Calcular Impuestos</button>
+        <p id="impuestoOutput"></p>
+      </div>
+  
+      <div id="array-section" class="exercise-section">
+        <h2>Array</h2>
+        <label for="arrayInput">Ingresa un arreglo (separado por comas):</label><br>
+        <input type="text" id="arrayInput" placeholder="Ingrese arreglo">
+        <button onclick="imprimirArreglo()">Imprimir Arreglo</button>
+        <ul id="resultadoArray"></ul>
+      </div>
+  
+      <div id="caracteres-section" class="exercise-section">
+        <h2>Números de Caracteres</h2>
+        <label for="cadena">Ingresa una cadena:</label>
+        <input type="text" id="cadena" placeholder="Ingrese una cadena"><br>
+        <label for="caracter">Ingresa un caracter:</label>
+        <input type="text" id="caracter" maxlength="1" placeholder="Ingrese un caracter">
+        <button onclick="calcularNumeroDeCaracteres()">Calcular Número de Caracteres</button>
+        <p id="resultadoCaracteres"></p>
+      </div>
+  
+      <div id="sumarArray-section" class="exercise-section">
+        <h2>Sumar Arreglo</h2>
+        <label for="arregloSum">Ingresa un arreglo de números (separados por comas):</label><br>
+        <input type="text" id="arregloSuma" placeholder="Ingrese un arreglo">
+        <button onclick="calcularSuma()">Calcular Suma</button>
+        <p id="resultadoSumarArray"></p>
+      </div>
+        
+      <div id = "MultiArray-section" class="exercise-section">
+        <h2>Multiplicar Arreglo</h2>
+        <label for="arregloMultipli">Ingresa un arreglo de números (separados por comas):</label><br>
+        <input type="text" id="arregloMulti" placeholder="Ingrese arreglo">
+        <button onclick="calcularMultiplicacion()">Calcular Multiplicación</button>
+        <p id="resultadoMulti"></p>
+      </div>
+  
+  
+    <div id="CalRango-section" class="exercise-section">
+      <h2>Calcular Suma de Rango</h2>
+      <label for="arreglo">Ingresa un arreglo de números (separados por comas):</label><br>
+      <input type="text" id="arreglo" placeholder="Ingresa arreglo"><br>
+      <label for="posInicial">Posición Inicial:</label>
+      <input type="number" id="posInicial" placeholder="Ingrese posición inicial"><br>
+      <label for="posFinal">Posición Final:</label>
+      <input type="number" id="posFinal" placeholder="Ingrese posición final">
+      <button onclick="calcularSumaRango()">Calcular Suma de Rango</button>
+      <p id="resultadoRango"></p>
+    </div>
+  
+    <div id="Max-section" class="exercise-section">
+        <h2>Encontrar Máximo</h2>
+        <label for="arregloM">Ingresa un arreglo de números (separados por comas):</label><br>
+        <input type="text" id="arregloMax" placeholder="Ingresar arreglo">
+        <button onclick="encontrarMaximo()">Encontrar Máximo</button>
+        <p id="resultadoMax"></p>
+    </div>
+    </div>
+
+  <!-- Se incluye el archivo JavaScript externo -->
+  <script src="script.js"></script>
+</body>
+</html>
